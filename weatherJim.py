@@ -27,7 +27,7 @@ python weather_consensus_bot.py
 /weather Miami, FL
 /start  shows help
 
-“””
+
 
 import os
 import asyncio
