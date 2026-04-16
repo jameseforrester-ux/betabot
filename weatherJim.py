@@ -16,7 +16,7 @@ pip install python-telegram-bot httpx
 - Send /newbot, follow the prompts
 - Copy the token you receive
 1. Paste your token into BOT_TOKEN below (or set env var):
-export TELEGRAM_BOT_TOKEN=“your_token_here”
+export TELEGRAM_BOT_TOKEN=8589504469:AAFliWw3euwsZdP8zC24KQ0Qs1mEqB7KP34
 1. Run:
 python weather_consensus_bot.py
 
