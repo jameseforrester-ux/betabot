@@ -25,7 +25,7 @@ python weather_consensus_bot.py
 /weather London, UK
 /weather Tokyo
 /weather Miami, FL
-/start — shows help
+/start  shows help
 
 “””
 
