@@ -52,7 +52,7 @@ BOT_TOKEN = os.getenv(8589504469:AAFliWw3euwsZdP8zC24KQ0Qs1mEqB7KP34, 8589504469
 # ─── LOGGING ──────────────────────────────────────────────────
 
 logging.basicConfig(
-format=”%(asctime)s | %(levelname)s | %(message)s”,
+format=%(asctime)s | %(levelname)s | %(message)s,
 level=logging.INFO,
 )
 logger = logging.getLogger(**name**)
@@ -62,7 +62,7 @@ logger = logging.getLogger(**name**)
 # All 10 deterministic models queried from Open-Meteo (free, no key)
 
 DETERMINISTIC_MODELS = [
-{“model”: “ecmwf_ifs025”, “label”: “ECMWF IFS 0.25° (Europe)”},
+{“model”: “ecmwf_ifs025”, “label”: “ECMWF IFS 0.25° (Europe)"},
 {“model”: “gfs_seamless”, “label”: “NOAA GFS (USA)”},
 {“model”: “icon_seamless”, “label”: “DWD ICON (Germany)”},
 {“model”: “meteofrance_seamless”, “label”: “Météo-France ARPEGE (France)”},
@@ -82,7 +82,7 @@ TIMEOUT = 30.0 # seconds per HTTP request
 # ─── GEOCODING ────────────────────────────────────────────────
 
 async def geocode_location(location: str) -> dict | None:
-“”“Convert a location string to lat/lon using Open-Meteo Geocoding API.”””
+
 params = {“name”: location, “count”: 1, “language”: “en”, “format”: “json”}
 async with httpx.AsyncClient(timeout=TIMEOUT) as client:
 try:
@@ -136,7 +136,7 @@ return None
 async def fetch_gfs_ensemble(
 client: httpx.AsyncClient, lat: float, lon: float
 ) -> list[float]:
-“”“Fetch GFS ensemble — returns up to 31 individual member max temps.”””
+
 params = {
 “latitude”: lat,
 “longitude”: lon,
@@ -162,7 +162,7 @@ return members
 async def fetch_ecmwf_ensemble(
 client: httpx.AsyncClient, lat: float, lon: float
 ) -> list[float]:
-“”“Fetch ECMWF ensemble — returns individual member max temps if available.”””
+
 params = {
 “latitude”: lat,
 “longitude”: lon,
@@ -186,7 +186,7 @@ logger.debug(f”ECMWF ensemble error: {e}”)
 return members
 
 async def gather_all_forecasts(lat: float, lon: float) -> dict:
-“”“Concurrently collect all deterministic + ensemble data points.”””
+
 async with httpx.AsyncClient(timeout=TIMEOUT) as client:
 # Fire off all requests concurrently
 det_tasks = [
@@ -222,7 +222,7 @@ def celsius_to_f(c: float) -> float:
 return c * 9 / 5 + 32
 
 def build_report(location_display: str, forecast_data: dict) -> str:
-“”“Build the full consensus report message.”””
+
 det = forecast_data[“deterministic”]
 gfs = forecast_data[“gfs_ensemble”]
 ecmwf = forecast_data[“ecmwf_ensemble”]
@@ -378,6 +378,7 @@ I analyze 40+ forecast data points from the world’s top meteorological agencie
 Just type a city name after /weather and I’ll do the rest!
 “””
 
+
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 await update.message.reply_text(HELP_TEXT, parse_mode=“Markdown”)
 
@@ -385,7 +386,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 await update.message.reply_text(HELP_TEXT, parse_mode=“Markdown”)
 
 async def weather_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-“”“Handle /weather <location>.”””
+
 if not context.args:
 await update.message.reply_text(
 “Please provide a location.\nExample: `/weather Denver, CO`”,
@@ -429,7 +430,7 @@ await update.message.reply_text(report)
 ```
 
 async def text_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-“”“Handle plain text messages — treat them as location queries.”””
+
 text = update.message.text.strip()
 if text.startswith(”/”):
 return
@@ -440,7 +441,7 @@ await weather_command(update, context)
 # ─── MAIN ─────────────────────────────────────────────────────
 
 def main():
-if BOT_TOKEN == “PASTE_YOUR_BOT_TOKEN_HERE”:
+if BOT_TOKEN == 8589504469:AAFliWw3euwsZdP8zC24KQ0Qs1mEqB7KP34:
 print(
 “\n❌ ERROR: No bot token set.\n”
 “ Edit BOT_TOKEN in this file or set the environment variable:\n”
