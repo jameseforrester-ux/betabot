@@ -62,7 +62,7 @@ logger = logging.getLogger(**name**)
 # All 10 deterministic models queried from Open-Meteo (free, no key)
 
 DETERMINISTIC_MODELS = [
-{“model”: “ecmwf_ifs025”, “label”: “ECMWF IFS 0.25° (Europe)"},
+{model: ecmwf_ifs025, label: ECMWF IFS 0.25° (Europe)},
 {“model”: “gfs_seamless”, “label”: “NOAA GFS (USA)”},
 {“model”: “icon_seamless”, “label”: “DWD ICON (Germany)”},
 {“model”: “meteofrance_seamless”, “label”: “Météo-France ARPEGE (France)”},
