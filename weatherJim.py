@@ -47,7 +47,7 @@ ContextTypes,
 
 # ─── CONFIGURATION ────────────────────────────────────────────
 
-BOT_TOKEN = os.getenv(“TELEGRAM_BOT_TOKEN”, “PASTE_YOUR_BOT_TOKEN_HERE”)
+BOT_TOKEN = os.getenv(8589504469:AAFliWw3euwsZdP8zC24KQ0Qs1mEqB7KP34, 8589504469:AAFliWw3euwsZdP8zC24KQ0Qs1mEqB7KP34)
 
 # ─── LOGGING ──────────────────────────────────────────────────
 
