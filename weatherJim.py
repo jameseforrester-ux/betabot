@@ -47,7 +47,7 @@ from telegram.ext import (
 
 # ---- CONFIGURATION -----------------------------------------------------------
 
-BOT_TOKEN = os.getenv(8589504469:AAFliWw3euwsZdP8zC24KQ0Qs1mEqB7KP34, 8589504469:AAFliWw3euwsZdP8zC24KQ0Qs1mEqB7KP34)
+BOT_TOKEN = os.getenv("8589504469:AAFliWw3euwsZdP8zC24KQ0Qs1mEqB7KP34", "8589504469:AAFliWw3euwsZdP8zC24KQ0Qs1mEqB7KP34")
 
 # ---- LOGGING -----------------------------------------------------------------
 
